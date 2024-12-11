@@ -3,12 +3,18 @@ import DefaultTheme from 'vitepress/theme';
 import { useData } from "vitepress";
 import { ref, watch, onMounted } from "vue";
 
+interface GitHubAuthor {
+  login: string;
+  avatar_url: string;
+  html_url: string;
+}
+
 const { Layout } = DefaultTheme;
 const { frontmatter } = useData();
 
 const contributors = ref([]);
 
-async function getGitHubAuthor(login) {
+async function getGitHubAuthor(login): Promise<GitHubAuthor | null> {
 
   const headers = {
     ...(!!import.meta.env.GITHUB_TOKEN && {
@@ -30,9 +36,9 @@ async function getGitHubAuthor(login) {
   }
 }
 
-async function getContributors() {
+async function getContributors(): Promise<GitHubAuthor[] | null> {
   if (!Array.isArray(frontmatter.value.mentions)) return [];
-  const contributorsList = [];
+  const contributorsList: GitHubAuthor[] = [];
   for (const login of frontmatter.value.mentions) {
     const user = await getGitHubAuthor(login);
     if (user) contributorsList.push(user);

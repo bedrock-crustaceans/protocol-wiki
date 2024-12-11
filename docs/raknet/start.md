@@ -6,8 +6,9 @@ mentions:
     - Tom-Teclador
 prev:
     text: 'Learning MCBE Protocol'
+    link: '/info/learn'
 next:
-    text: 'Learning Data Types'
+    text: 'RakNet Data Types'
     link: '/raknet/data-types'
 ---
 
@@ -50,7 +51,7 @@ This is the sequence that an client(s) and the server go through to verify and c
 
 Now, all data recieved from frame sets are [Game Packets](). The data recieved from the game packet is now delt with by the [Bedrock Protocol]() (We will go over it after RakNet).
 
-This is the barebones of RakNet, so do not worry if you do not understand yet. Our next part is going to go over the [Data Types]() used by RakNet.
+This is the barebones of RakNet, so do not worry if you do not understand yet. Our next part is going to go over the [Data Types](/raknet/data-types.md) used by RakNet.
 
 ---
 
@@ -58,4 +59,4 @@ This is the barebones of RakNet, so do not worry if you do not understand yet. O
 
 [[Jenkin Software RakNet Docs](http://www.jenkinssoftware.com/raknet/manual/systemoverview.html)]: Information on how RakNet works & communicates
 
-[[wiki.vg](https://wiki.vg/Raknet_Protocol)]: Information on handshake sequence
+[[wiki.vg/Minecraft Wiki](https://minecraft.wiki/w/Minecraft_Wiki:Projects/wiki.vg_merge/Raknet_Protocol)]: Information on handshake sequence
